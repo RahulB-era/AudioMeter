@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gauge_indicator/gauge_indicator.dart';
+// import 'package:gauge_indicator/gauge_indicator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             
             const Text(
-              'You have pushed the button this many times:',
+              'graph and gauge',
             ),
             ElevatedButton.icon(
                 onPressed: () {},
