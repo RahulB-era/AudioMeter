@@ -32,6 +32,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
+  dynamic_color: ^1.7.0
+  gauge_indicator: ^0.4.3
 
 dev_dependencies:
   flutter_test:
