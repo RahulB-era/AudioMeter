@@ -1,2 +1,0 @@
-# AudioMeter
-A flutter project
