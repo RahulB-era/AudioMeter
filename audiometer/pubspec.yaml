@@ -34,6 +34,8 @@ dependencies:
   google_fonts: ^6.2.1
   dynamic_color: ^1.7.0
   syncfusion_flutter_gauges: ^25.1.40
+  # noise_meter: ^5.0.2
+  
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+// import 'package:noise_meter/noise_meter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -80,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             SfRadialGauge(
                             axes: <RadialAxis>[
