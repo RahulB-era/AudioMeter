@@ -33,7 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   dynamic_color: ^1.7.0
-  gauge_indicator: ^0.4.3
+  syncfusion_flutter_gauges: ^25.1.40
 
 dev_dependencies:
   flutter_test:
