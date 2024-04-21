@@ -54,8 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
   NoiseReading? _latestReading;
   StreamSubscription<NoiseReading>? _noiseSubscription;
   NoiseMeter? noiseMeter;
-  double? maxDB;
-  double? meanDB;
+  double? maxDB = 0.0;
+  double? meanDB = 0.0;
   int currentPageIndex = 0;
 
   void stop() {
@@ -93,6 +93,12 @@ class _MyHomePageState extends State<MyHomePage> {
     // Listen to the noise stream.
     _noiseSubscription = noiseMeter?.noise.listen(onData, onError: onError);
     setState(() => _isRecording = true);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    start();
   }
 
   @override
@@ -169,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.blue,
                 ),
                 label: Text(
-                  'play',
+                  'Start/Stop',
                   style: TextStyle(color: Colors.blue),
                 )),
             Text(
