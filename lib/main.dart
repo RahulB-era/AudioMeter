@@ -54,8 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
   NoiseReading? _latestReading;
   StreamSubscription<NoiseReading>? _noiseSubscription;
   NoiseMeter? noiseMeter;
-  double? maxDB = 0.0;
-  double? meanDB = 0.0;
+  double? maxDB;
+  double? meanDB;
   int currentPageIndex = 0;
 
   void stop() {
@@ -95,10 +95,16 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() => _isRecording = true);
   }
 
+  Future<void> checkRecordAudioPermission() async {
+    if (!(await checkPermission())) {
+      await requestPermission();
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    start();
+    checkRecordAudioPermission();
   }
 
   @override
@@ -157,10 +163,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 NeedlePointer(value: maxDB ?? 0, enableAnimation: true)
               ], annotations: <GaugeAnnotation>[
                 GaugeAnnotation(
-                    widget: Container(
-                        child: Text('${maxDB!.toStringAsFixed(2)} dB',
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold))),
+                    widget: Text('${maxDB?.toStringAsFixed(2) ?? 0} dB',
+                        style: const TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
                     angle: maxDB,
                     positionFactor: 0.5)
               ])
